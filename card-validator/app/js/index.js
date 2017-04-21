@@ -9,6 +9,7 @@ window.onload = function () {
   const movie = $('#movie');
   const validationModal = $('#validation-modal');
   const result = $('#result');
+  const audio = $('#audio');
 
   let previousBingoTime = 0;
 
@@ -44,10 +45,15 @@ window.onload = function () {
       previousBingoTime = currentTime;
       result.find('i').addClass('fa-check valid');
       result.find('i').removeClass('fa-close invalid');
+      audio.attr('src', '../assets/valid.mp3');
     } else {
       result.find('i').removeClass('fa-check valid');
       result.find('i').addClass('fa-close invalid');
+      audio.attr('src', '../assets/invalid.mp3');
     }
+
+    audio.get(0).load();
+    audio.get(0).play();
   });
 
   validationModal.on('hidden.bs.modal', function() {
