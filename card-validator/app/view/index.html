@@ -1,5 +1,7 @@
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../node_modules/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="../css/index.css">
 </head>
 <body>
@@ -10,7 +12,34 @@
     <p>Your user agent does not support the HTML5 Video element.</p>
   </video>
 
-  <script src="../js/cards.js"></script>
+  <div id="validation-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+           <input id="card-number" type="text" class="form-control" placeholder="Card number">
+           <select id="pattern-type" class="form-control">
+             <option value="BLACKOUT">Blackout</option>
+             <option value="X">X</option>
+             <option value="TOP">Top</option>
+             <option value="BOTTOM">Bottom</option>
+             <option value="CORNERS">Corners</option>
+             <option value="ROW">Row</option>
+             <option value="CIRCLE">Circle</option>
+           </select>
+        </div>
+        <div id="result">
+          <i class="fa" aria-hidden="true"></i>
+        </div>
+        <div class="modal-footer">
+          <button id="validate-card" type="button" class="btn btn-primary">Validate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="../js/index.js"></script>
 </body>
 </html>

@@ -1,15 +1,14 @@
 {
-  "name": "movie-drinking-game",
+  "name": "battle-royal-game",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
-  "dependencies": {
-    "babel-cli": "^6.18.0",
-    "babel-preset-es2015": "^6.18.0",
-    "jquery": "^2.2.4"
-  },
+  "main": "./app/main.js",
+  "dependencies": {},
   "devDependencies": {
-    "electron-prebuilt": "^1.2.2"
+    "bootstrap": "^3.3.7",
+    "electron-prebuilt": "^1.2.2",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1"
   },
   "scripts": {
     "start": "electron ./app/main.js --enable-logging"

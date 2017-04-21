@@ -1,4 +1,6 @@
-const view = `<table>
+const view = `
+<b>#{{ id }}</b>
+<table>
   <tbody>
     {% for row in rows %}
     <tr>

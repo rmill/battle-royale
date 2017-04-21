@@ -28,7 +28,9 @@ SQUARES = [
 'TAZER',
 'TEXT',
 'WATER_BOTTLE',
-'YELLING'
+'YELLING',
+'KATANA',
+'FIRE'
 ]
 
 function getRandomSquare() {
