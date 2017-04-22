@@ -9,7 +9,6 @@ window.onload = function () {
   const movie = $('#movie');
   const validationModal = $('#validation-modal');
   const result = $('#result');
-  const audio = $('#audio');
 
   let previousBingoTime = 0;
 
@@ -29,31 +28,26 @@ window.onload = function () {
   });
 
   $('#validate-card').click(function(){
-    const cardNumber = validationModal.find('#card-number').val();
-    const card = cards[cardNumber];
-    const patternType = validationModal.find('#pattern-type').val();
-    const pattern = patterns[patternType];
-    const currentTime = movie.get(0).currentTime;
-    const currentItems = getCurrentItems(previousBingoTime, currentTime);
-
-    const isValid = validate(currentItems, pattern, card);
+    // const cardNumber = validationModal.find('#card-number').val();
+    // const card = cards[cardNumber];
+    // const patternType = validationModal.find('#pattern-type').val();
+    // const pattern = patterns[patternType];
+    // const currentTime = movie.get(0).currentTime;
+    // const currentItems = getCurrentItems(previousBingoTime, currentTime);
+    //
+    // const isValid = validate(currentItems, pattern, card);
 
     result.show();
     validationModal.find('.modal-footer').hide();
 
-    if (isValid) {
-      previousBingoTime = currentTime;
+    // if (isValid) {
+      // previousBingoTime = currentTime;
       result.find('i').addClass('fa-check valid');
       result.find('i').removeClass('fa-close invalid');
-      audio.attr('src', '../assets/valid.mp3');
-    } else {
-      result.find('i').removeClass('fa-check valid');
-      result.find('i').addClass('fa-close invalid');
-      audio.attr('src', '../assets/invalid.mp3');
-    }
-
-    audio.get(0).load();
-    audio.get(0).play();
+    // } else {
+    //   result.find('i').removeClass('fa-check valid');
+    //   result.find('i').addClass('fa-close invalid');
+    // }
   });
 
   validationModal.on('hidden.bs.modal', function() {
